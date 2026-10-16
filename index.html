@@ -3,24 +3,24 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#087F70">
 
   <title>VagaNex | Vagas, oportunidades e conexões</title>
-  <meta name="description" content="A VagaNex aproxima profissionais, vagas e empresas, valorizando capacidades, experiências e compatibilidade.">
+  <meta name="description" content="VagaNex conecta profissionais e empresas, valorizando capacidades, experiências e oportunidades.">
 
   <style>
     :root {
       --verde: #087F70;
-      --verde-escuro: #075E54;
+      --verde-escuro: #07594F;
       --esmeralda: #12BFA5;
-      --menta: #E2F8F2;
-      --fundo: #F6FBF9;
+      --menta: #E6F8F3;
+      --fundo: #F7FAF9;
       --branco: #FFFFFF;
       --grafite: #202C35;
-      --texto: #52616B;
-      --borda: #DCE9E5;
-      --sombra: 0 12px 32px rgba(7, 94, 84, .08);
+      --texto: #53616B;
+      --borda: #DCE7E3;
+      --sombra: 0 12px 30px rgba(7, 89, 79, .08);
     }
 
     * { box-sizing: border-box; }
@@ -32,22 +32,23 @@
 
     body {
       margin: 0;
+      color: var(--grafite);
+      background: var(--branco);
       font-family: Inter, "Segoe UI", Arial, sans-serif;
       font-size: 17px;
       line-height: 1.65;
-      color: var(--grafite);
-      background: var(--branco);
     }
 
     a { color: inherit; text-decoration: none; }
+
     button { font: inherit; }
 
     .container {
       width: min(1160px, calc(100% - 48px));
-      margin-inline: auto;
+      margin: 0 auto;
     }
 
-    /* CABEÇALHO */
+    /* CABEÇALHO E MARCA */
 
     .header {
       position: sticky;
@@ -55,7 +56,7 @@
       z-index: 10;
       background: rgba(255,255,255,.97);
       border-bottom: 1px solid var(--borda);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
     }
 
     .header-inner {
@@ -73,16 +74,17 @@
       flex-shrink: 0;
     }
 
-    .brand img {
-      width: 45px;
-      height: 45px;
-      object-fit: contain;
+    .brand-symbol {
+      width: 44px;
+      height: 44px;
+      display: block;
+      flex-shrink: 0;
     }
 
     .brand-name {
       font-size: 28px;
-      line-height: 1.2;
       font-weight: 800;
+      line-height: 1.2;
       letter-spacing: -.8px;
       color: var(--verde-escuro);
     }
@@ -92,13 +94,13 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 23px;
     }
 
     .nav a {
-      font-size: 16px;
-      font-weight: 650;
       color: var(--texto);
+      font-size: 15px;
+      font-weight: 700;
     }
 
     .nav a:hover { color: var(--verde); }
@@ -116,148 +118,164 @@
     /* APRESENTAÇÃO */
 
     .hero {
-      padding: 75px 0 65px;
+      padding: 58px 0 43px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 50% 0%, #DDF8F1 0%, transparent 62%),
+        radial-gradient(ellipse at 50% 0%, #E0F8F1 0%, transparent 65%),
         linear-gradient(180deg, #F7FCFA, #FFFFFF);
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       color: var(--verde);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     h1 {
-      max-width: 850px;
-      margin: 0 auto 18px;
-      font-size: 46px;
+      margin: 0 auto 16px;
+      font-size: 44px;
       line-height: 1.17;
-      letter-spacing: -1.4px;
+      letter-spacing: -1.3px;
     }
 
     h1 span { color: var(--verde); }
 
     .hero-description {
-      max-width: 760px;
+      max-width: 730px;
       margin: 0 auto;
-      color: var(--texto);
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .hero-slogan {
-      margin: 17px 0 0;
-      color: var(--verde-escuro);
-      font-size: 21px;
-      font-weight: 750;
-    }
-
-    /* DOIS PILARES PRINCIPAIS */
-
-    .pillars {
-      padding: 25px 0 80px;
-      background: #FFFFFF;
-    }
-
-    .pillars-heading {
-      max-width: 760px;
-      margin: 0 auto 35px;
-      text-align: center;
-    }
-
-    .pillars-heading h2 {
-      margin: 0 0 10px;
-      font-size: 29px;
-      line-height: 1.3;
-    }
-
-    .pillars-heading p {
-      margin: 0;
-      color: var(--texto);
-      font-size: 17px;
-    }
-
-    .pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 25px;
-    }
-
-    .pillar {
-      display: flex;
-      flex-direction: column;
-      min-height: 365px;
-      padding: 34px;
-      border: 1px solid var(--borda);
-      border-radius: 22px;
-      background: var(--branco);
-      box-shadow: var(--sombra);
-      transition: transform .2s, border-color .2s;
-    }
-
-    .pillar:hover {
-      transform: translateY(-4px);
-      border-color: var(--esmeralda);
-    }
-
-    .pillar-featured {
-      background: linear-gradient(145deg, #F0FCF8, #FFFFFF 78%);
-    }
-
-    .pillar-icon {
-      display: grid;
-      width: 58px;
-      height: 58px;
-      margin-bottom: 22px;
-      place-items: center;
-      border-radius: 16px;
-      color: var(--verde);
-      background: var(--menta);
-      font-size: 27px;
-      font-weight: 800;
-    }
-
-    .pillar h3 {
-      margin: 0 0 13px;
-      font-size: 27px;
-      line-height: 1.3;
-      letter-spacing: -.5px;
-    }
-
-    .pillar p {
-      margin: 0 0 22px;
       color: var(--texto);
       font-size: 17px;
       line-height: 1.75;
     }
 
+    .hero-slogan {
+      margin: 13px 0 0;
+      color: var(--verde-escuro);
+      font-size: 19px;
+      font-weight: 750;
+    }
+
+    /* DOIS GRANDES DESTAQUES */
+
+    .pillars {
+      padding: 28px 0 76px;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.3;
+      letter-spacing: -.5px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--texto);
+      font-size: 16px;
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .pillar {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 350px;
+      padding: 30px;
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      background: white;
+      box-shadow: var(--sombra);
+      transition: transform .2s, border-color .2s;
+    }
+
+    .pillar:hover {
+      transform: translateY(-3px);
+      border-color: var(--esmeralda);
+    }
+
+    .pillar-primary {
+      background: linear-gradient(145deg, #EAF9F4 0%, #FFFFFF 75%);
+    }
+
+    .pillar-top {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .pillar-icon {
+      display: grid;
+      width: 55px;
+      height: 55px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--verde);
+      background: var(--menta);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .pillar-label {
+      margin: 0 0 3px;
+      color: var(--verde);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    .pillar h3 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.3;
+      letter-spacing: -.4px;
+    }
+
+    .pillar-description {
+      margin: 0 0 18px;
+      color: var(--texto);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
     .pillar ul {
       display: grid;
-      gap: 8px;
-      margin: 0 0 26px;
+      gap: 7px;
+      margin: 0 0 24px;
       padding-left: 21px;
       color: var(--grafite);
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .pillar li::marker { color: var(--verde); }
 
     .button {
       display: inline-flex;
-      min-height: 50px;
+      min-height: 49px;
       align-items: center;
       justify-content: center;
-      padding: 12px 20px;
+      padding: 12px 18px;
       border: 1px solid transparent;
-      border-radius: 10px;
+      border-radius: 9px;
       font-size: 16px;
-      line-height: 1.4;
       font-weight: 750;
       text-align: center;
       cursor: pointer;
@@ -275,8 +293,8 @@
 
     .button-outline {
       color: var(--verde-escuro);
-      background: white;
       border-color: var(--borda);
+      background: white;
     }
 
     .button-outline:hover { border-color: var(--verde); }
@@ -286,128 +304,123 @@
       margin-top: auto;
     }
 
-    /* OUTRAS PARTES DA PLATAFORMA */
+    /* FERRAMENTAS DA VAGANEX */
 
     .section {
-      padding: 75px 0;
+      padding: 68px 0;
     }
 
     .section-soft { background: var(--fundo); }
 
-    .section-heading {
-      max-width: 760px;
-      margin: 0 auto 38px;
-      text-align: center;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 13px;
-      font-size: 29px;
-      line-height: 1.3;
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--texto);
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    .cards {
+    .tools-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      gap: 19px;
     }
 
-    .card {
-      padding: 26px;
+    .tool {
+      padding: 24px;
       border: 1px solid var(--borda);
-      border-radius: 16px;
+      border-radius: 14px;
       background: white;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
+    .tool-number {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--verde);
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: 1px;
+    }
+
+    .tool h3 {
+      margin: 0 0 9px;
+      font-size: 19px;
       line-height: 1.4;
     }
 
-    .card p {
+    .tool p {
       margin: 0;
       color: var(--texto);
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.75;
     }
 
-    .card a {
+    .tool a {
       display: inline-block;
-      margin-top: 17px;
+      margin-top: 15px;
       color: var(--verde);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
     }
 
-    .card a:hover { text-decoration: underline; }
+    .tool a:hover { text-decoration: underline; }
+
+    /* MÉTODO */
 
     .steps {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
+      gap: 17px;
     }
 
     .step {
-      padding: 23px;
+      padding: 22px;
       border-top: 3px solid var(--esmeralda);
-      border-radius: 0 0 12px 12px;
-      background: white;
+      border-radius: 0 0 11px 11px;
+      background: var(--fundo);
     }
 
     .step-number {
       color: var(--verde);
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 850;
+      letter-spacing: .8px;
     }
 
     .step h3 {
-      margin: 10px 0;
-      font-size: 19px;
+      margin: 9px 0;
+      font-size: 18px;
     }
 
     .step p {
       margin: 0;
       color: var(--texto);
-      font-size: 16px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.75;
     }
+
+    /* PRINCÍPIO DE DECISÃO */
 
     .principle {
       display: grid;
       grid-template-columns: .8fr 1.2fr;
       align-items: center;
-      gap: 40px;
-      padding: 36px;
+      gap: 34px;
+      padding: 32px;
       border: 1px solid var(--borda);
-      border-radius: 20px;
+      border-radius: 17px;
       background: white;
     }
 
     .principle h2 {
       margin: 0;
-      font-size: 28px;
+      font-size: 27px;
       line-height: 1.4;
     }
 
     .principle p {
       margin: 0;
       color: var(--texto);
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.8;
     }
 
     /* CHAMADA FINAL */
 
     .cta {
-      padding: 65px 0;
+      padding: 53px 0;
       color: white;
       background: var(--verde-escuro);
     }
@@ -416,12 +429,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
+      gap: 25px;
     }
 
     .cta h2 {
-      margin: 0 0 10px;
-      font-size: 30px;
+      margin: 0 0 9px;
+      font-size: 27px;
       line-height: 1.35;
     }
 
@@ -429,7 +442,7 @@
       max-width: 720px;
       margin: 0;
       color: #E0F2EE;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.75;
     }
 
@@ -444,7 +457,7 @@
     /* RODAPÉ */
 
     .footer {
-      padding: 30px 0;
+      padding: 27px 0;
       border-top: 1px solid var(--borda);
     }
 
@@ -456,23 +469,22 @@
     }
 
     .footer-brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 9px;
-      color: var(--verde-escuro);
       font-size: 21px;
       font-weight: 800;
+      color: var(--verde-escuro);
     }
 
-    .footer-brand img {
-      width: 34px;
-      height: 34px;
-      object-fit: contain;
+    .footer-brand .brand-symbol {
+      width: 33px;
+      height: 33px;
     }
 
     .footer small {
       display: block;
-      margin-top: 6px;
+      margin-top: 5px;
       color: var(--texto);
       font-size: 14px;
     }
@@ -480,7 +492,7 @@
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 17px;
     }
 
     .footer-links a {
@@ -490,10 +502,9 @@
 
     @media (max-width: 900px) {
       .nav { gap: 13px; }
-      .nav a { font-size: 15px; }
-      h1 { font-size: 40px; }
+      .nav a { font-size: 14px; }
+      .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 700px) {
@@ -501,7 +512,7 @@
 
       .header-inner { min-height: 70px; }
 
-      .brand img {
+      .brand-symbol {
         width: 39px;
         height: 39px;
       }
@@ -520,36 +531,38 @@
         top: 100%;
         left: 0;
         right: 0;
-        align-items: stretch;
         flex-direction: column;
+        align-items: stretch;
         gap: 0;
-        padding: 12px 18px 18px;
+        padding: 10px 18px 18px;
         border-bottom: 1px solid var(--borda);
         background: white;
       }
 
       .nav.open { display: flex; }
 
-      .nav a { padding: 12px 5px; font-size: 16px; }
+      .nav a {
+        padding: 11px 4px;
+        font-size: 16px;
+      }
 
-      .hero { padding: 57px 0 48px; }
+      .hero { padding: 48px 0 35px; }
 
       h1 {
         font-size: 34px;
         line-height: 1.22;
-        letter-spacing: -.8px;
+        letter-spacing: -.7px;
       }
 
-      .hero-slogan { font-size: 20px; }
-      .hero-description { font-size: 17px; }
+      .hero-description { font-size: 16px; }
+      .hero-slogan { font-size: 18px; }
 
-      .pillars { padding: 15px 0 58px; }
+      .pillars { padding: 24px 0 55px; }
 
-      .pillars-heading h2,
       .section-heading h2 { font-size: 25px; }
 
       .pillar-grid,
-      .cards,
+      .tools-grid,
       .steps,
       .principle {
         grid-template-columns: 1fr;
@@ -557,28 +570,24 @@
 
       .pillar {
         min-height: auto;
-        padding: 25px;
+        padding: 24px;
       }
 
-      .pillar h3 { font-size: 24px; }
+      .pillar h3 { font-size: 23px; }
 
-      .section { padding: 58px 0; }
+      .section { padding: 54px 0; }
 
-      .principle {
-        gap: 18px;
-        padding: 25px;
-      }
+      .principle { padding: 24px; gap: 16px; }
+      .principle h2 { font-size: 24px; }
 
-      .principle h2 { font-size: 25px; }
-
-      .cta { padding: 52px 0; }
+      .cta { padding: 45px 0; }
 
       .cta-inner {
         align-items: stretch;
         flex-direction: column;
       }
 
-      .cta h2 { font-size: 26px; }
+      .cta h2 { font-size: 25px; }
 
       .footer-inner {
         align-items: flex-start;
@@ -599,24 +608,40 @@
     <div class="container header-inner">
 
       <a class="brand" href="#inicio" aria-label="VagaNex - início">
-        <!-- Use aqui o arquivo EXATO da logo oficial aprovada. -->
-        <img src="imagens/logo-vaganex-oficial.png" alt="Logo oficial VagaNex">
+        <!-- Símbolo vetorial integrado: não depende de imagem externa. -->
+        <svg class="brand-symbol" viewBox="0 0 64 64"
+             xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Símbolo VN com diamante">
+          <defs>
+            <linearGradient id="vagaNexGreen" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#087F70"/>
+              <stop offset="100%" stop-color="#12BFA5"/>
+            </linearGradient>
+          </defs>
+          <path d="M5 15 H20 L31 43 L43 15 H57 L38 54
+                   Q32 65 26 54 Z"
+                fill="url(#vagaNexGreen)"/>
+          <path d="M26 31 H42 V45 H26 Z"
+                fill="#FFFFFF" opacity=".88"/>
+          <path d="M48 3 L59 7 L63 18 L57 28 L46 25 L42 15 Z"
+                fill="#12BFA5"/>
+          <path d="M52 8 L58 15 L54 22 L48 15 Z"
+                fill="#B9F5E8"/>
+        </svg>
+
         <span class="brand-name">Vaga<span>Nex</span></span>
       </a>
 
-      <button
-        class="menu-button"
-        id="menuButton"
-        type="button"
-        aria-expanded="false"
-        aria-controls="mainNav">
+      <button class="menu-button" id="menuButton"
+              type="button" aria-expanded="false"
+              aria-controls="mainNav">
         ☰ Menu
       </button>
 
       <nav class="nav" id="mainNav" aria-label="Navegação principal">
         <a href="#oportunidades">Vagas e oportunidades</a>
         <a href="#conexoes">Empresas e conexões</a>
-        <a href="#plataforma">A plataforma</a>
+        <a href="#ferramentas">Ferramentas</a>
         <a href="#principios">Nossa abordagem</a>
       </nav>
 
@@ -627,7 +652,7 @@
 
     <section class="hero" id="inicio">
       <div class="container">
-        <span class="eyebrow">Pessoas • Oportunidades • Empresas</span>
+        <span class="eyebrow">Pessoas · Oportunidades · Empresas</span>
 
         <h1>
           Menos procura.<br>
@@ -646,62 +671,66 @@
       </div>
     </section>
 
-    <!-- OS DOIS PILARES PRINCIPAIS -->
+    <!-- DESTAQUES PRINCIPAIS -->
 
     <section class="pillars" aria-labelledby="pillarsTitle">
       <div class="container">
 
-        <div class="pillars-heading">
+        <div class="section-heading">
           <h2 id="pillarsTitle">O que você procura na VagaNex?</h2>
-          <p>
-            Duas portas de entrada para aproximar oportunidades,
-            profissionais e organizações.
-          </p>
+          <p>Escolha o caminho que faz sentido para você.</p>
         </div>
 
         <div class="pillar-grid">
 
-          <article class="pillar pillar-featured" id="oportunidades">
-            <div class="pillar-icon" aria-hidden="true">↗</div>
+          <article class="pillar pillar-primary" id="oportunidades">
+            <div class="pillar-top">
+              <div class="pillar-icon" aria-hidden="true">↗</div>
+              <div>
+                <p class="pillar-label">Para profissionais</p>
+                <h3>Vagas e oportunidades</h3>
+              </div>
+            </div>
 
-            <h3>Vagas e oportunidades</h3>
-
-            <p>
-              Encontre oportunidades profissionais e conheça vagas
-              considerando atividades, requisitos, capacidades e
-              condições de trabalho.
+            <p class="pillar-description">
+              Conheça oportunidades profissionais e apresente o que
+              você sabe fazer, suas experiências e suas capacidades.
             </p>
 
             <ul>
-              <li>Conheça oportunidades profissionais</li>
-              <li>Apresente suas capacidades e experiências</li>
-              <li>Considere requisitos e condições da vaga</li>
+              <li>Explore oportunidades profissionais</li>
+              <li>Organize seu perfil e suas experiências</li>
+              <li>Conheça os requisitos das vagas</li>
             </ul>
 
             <a class="button button-primary" href="perfil-profissional.html">
-              Área do profissional
+              Acessar perfil profissional
             </a>
           </article>
 
           <article class="pillar" id="conexoes">
-            <div class="pillar-icon" aria-hidden="true">◇</div>
+            <div class="pillar-top">
+              <div class="pillar-icon" aria-hidden="true">◇</div>
+              <div>
+                <p class="pillar-label">Para organizações</p>
+                <h3>Empresas e conexões</h3>
+              </div>
+            </div>
 
-            <h3>Empresas e conexões</h3>
-
-            <p>
-              Organize oportunidades, apresente os requisitos das funções
-              e aproxime sua empresa de profissionais com experiências
-              e capacidades relevantes.
+            <p class="pillar-description">
+              Apresente as oportunidades da sua empresa e organize
+              os requisitos necessários para aproximar profissionais
+              e necessidades reais de trabalho.
             </p>
 
             <ul>
-              <li>Estruture vagas e requisitos</li>
-              <li>Conheça perfis profissionais</li>
-              <li>Apoie a análise de compatibilidade</li>
+              <li>Estruture vagas e atividades</li>
+              <li>Defina requisitos e condições de trabalho</li>
+              <li>Apoie a análise de perfis profissionais</li>
             </ul>
 
             <a class="button button-outline" href="cadastro-vaga.html">
-              Área das empresas
+              Acessar área das empresas
             </a>
           </article>
 
@@ -709,55 +738,85 @@
       </div>
     </section>
 
-    <!-- MÓDULOS COMPLEMENTARES -->
+    <!-- FERRAMENTAS QUE FAZEM A DIFERENÇA -->
 
-    <section class="section section-soft" id="plataforma">
+    <section class="section section-soft" id="ferramentas">
       <div class="container">
 
         <div class="section-heading">
-          <span class="eyebrow">Como a plataforma se organiza</span>
-          <h2>Informações que ajudam a criar conexões melhores</h2>
+          <span class="eyebrow">Além da conexão</span>
+          <h2>Ferramentas para uma análise mais completa</h2>
           <p>
-            A proposta da VagaNex vai além de listar vagas e currículos:
-            organiza informações para apoiar uma compreensão mais ampla
-            entre as necessidades das empresas e as capacidades das pessoas.
+            A estrutura da VagaNex valoriza informações que ajudam
+            a compreender as capacidades das pessoas e as necessidades
+            das organizações.
           </p>
         </div>
 
-        <div class="cards">
+        <div class="tools-grid">
 
-          <article class="card">
+          <article class="tool">
+            <span class="tool-number">01 · PERFIL</span>
             <h3>Perfil profissional</h3>
             <p>
-              Experiências, conhecimentos, habilidades, vivências práticas
-              e exemplos do que o profissional sabe fazer.
+              Organize experiências, conhecimentos, habilidades e
+              vivências formais ou informais.
             </p>
             <a href="perfil-profissional.html">Conhecer o perfil →</a>
           </article>
 
-          <article class="card">
-            <h3>Cadastro de oportunidades</h3>
+          <article class="tool">
+            <span class="tool-number">02 · OPORTUNIDADE</span>
+            <h3>Cadastro de vagas</h3>
             <p>
-              Atividades, requisitos obrigatórios e desejáveis,
-              condições de trabalho e benefícios da vaga.
+              Descreva atividades, requisitos obrigatórios e desejáveis,
+              condições de trabalho e benefícios.
             </p>
             <a href="cadastro-vaga.html">Conhecer o cadastro →</a>
           </article>
 
-          <article class="card">
-            <h3>Compatibilidade</h3>
+          <article class="tool">
+            <span class="tool-number">03 · COMPATIBILIDADE</span>
+            <h3>Comparação de perfis</h3>
             <p>
-              Organização das informações do perfil e dos requisitos
+              Organize as informações do profissional e os requisitos
               da oportunidade para apoiar a análise.
             </p>
             <a href="comparacao-perfil.html">Conhecer a comparação →</a>
           </article>
 
+          <article class="tool">
+            <span class="tool-number">04 · EVIDÊNCIAS</span>
+            <h3>Experiências demonstráveis</h3>
+            <p>
+              Considere exemplos práticos que ajudam a explicar
+              conhecimentos e habilidades declarados.
+            </p>
+          </article>
+
+          <article class="tool">
+            <span class="tool-number">05 · MOBILIDADE</span>
+            <h3>Contexto de deslocamento</h3>
+            <p>
+              Considere disponibilidade, tempo de deslocamento e
+              condições de acesso quando forem relevantes à oportunidade.
+            </p>
+          </article>
+
+          <article class="tool">
+            <span class="tool-number">06 · DECISÃO</span>
+            <h3>Informação para decidir</h3>
+            <p>
+              Apresente elementos que apoiem a análise sem transformar
+              uma pontuação isolada em decisão definitiva.
+            </p>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- MÉTODO -->
+    <!-- METODOLOGIA -->
 
     <section class="section" id="como-funciona">
       <div class="container">
@@ -777,8 +836,7 @@
             <span class="step-number">ETAPA 01</span>
             <h3>Oportunidade</h3>
             <p>
-              A empresa descreve a função, as atividades e os requisitos
-              necessários para o trabalho.
+              A empresa descreve a função, as atividades e os requisitos.
             </p>
           </article>
 
@@ -796,7 +854,7 @@
             <h3>Evidências</h3>
             <p>
               Exemplos ajudam a compreender a experiência e identificar
-              o que ainda precisa de validação.
+              o que ainda precisa ser validado.
             </p>
           </article>
 
@@ -804,8 +862,7 @@
             <span class="step-number">ETAPA 04</span>
             <h3>Decisão</h3>
             <p>
-              Informações organizadas apoiam uma avaliação responsável
-              feita pelas pessoas envolvidas.
+              As informações organizadas apoiam uma avaliação responsável.
             </p>
           </article>
 
@@ -813,7 +870,7 @@
       </div>
     </section>
 
-    <!-- PRINCÍPIO -->
+    <!-- PRINCÍPIOS -->
 
     <section class="section section-soft" id="principios">
       <div class="container">
@@ -849,7 +906,7 @@
         </div>
 
         <a class="button" href="#oportunidades">
-          Conheça as oportunidades
+          Conheça os caminhos
         </a>
       </div>
     </section>
@@ -861,10 +918,17 @@
 
       <div>
         <a class="footer-brand" href="#inicio">
-          <img src="imagens/logo-vaganex-oficial.png" alt="">
+          <svg class="brand-symbol" viewBox="0 0 64 64"
+               xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5 15 H20 L31 43 L43 15 H57 L38 54
+                     Q32 65 26 54 Z" fill="#087F70"/>
+            <path d="M26 31 H42 V45 H26 Z" fill="#FFFFFF"/>
+            <path d="M48 3 L59 7 L63 18 L57 28 L46 25 L42 15 Z"
+                  fill="#12BFA5"/>
+            <path d="M52 8 L58 15 L54 22 L48 15 Z" fill="#B9F5E8"/>
+          </svg>
           <span>VagaNex</span>
         </a>
-
         <small>Menos procura. Mais compatibilidade.</small>
         <small>© <span id="currentYear"></span> VagaNex.</small>
       </div>
