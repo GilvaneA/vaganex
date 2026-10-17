@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F4F8F7">
+  <meta name="description" content="VagaNex: conexões entre profissionais, empresas e oportunidades.">
+  <title>VagaNex | Entrada da plataforma</title>
+  <style>
+    :root {
+      --verde: #0F766E;
+      --verde-claro: #EAF4F1;
+      --fundo: #F4F8F7;
+      --texto: #172B2A;
+      --cinza: #5B706D;
+      --borda: #D8E5E1;
+      --branco: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+    }
+
+    header {
+      padding: 22px;
+      border-bottom: 1px solid var(--borda);
+      background: var(--branco);
+    }
+
+    .marca {
+      max-width: 1000px;
+      margin: auto;
+      font-size: 27px;
+      font-weight: 800;
+    }
+
+    .marca span { color: var(--verde); }
+
+    main {
+      width: min(1000px, calc(100% - 32px));
+      margin: 60px auto;
+    }
+
+    .introducao {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .introducao p {
+      color: var(--cinza);
+      line-height: 1.7;
+    }
+
+    .opcoes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .cartao {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .cartao h2 { margin-top: 0; }
+
+    .cartao p {
+      color: var(--cinza);
+      line-height: 1.7;
+      min-height: 54px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 13px 18px;
+      background: var(--verde);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .botao:hover { opacity: 0.9; }
+
+    .aviso {
+      margin-top: 28px;
+      padding: 16px;
+      background: var(--verde-claro);
+      border-radius: 12px;
+      color: var(--cinza);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--cinza);
+      border-top: 1px solid var(--borda);
+    }
+
+    @media (max-width: 650px) {
+      .opcoes { grid-template-columns: 1fr; }
+      main { margin-top: 35px; }
+      .cartao { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="marca">Vaga<span>Nex</span></div>
+  </header>
+
+  <main>
+    <section class="introducao">
+      <h1>Encontre sua próxima conexão.</h1>
+      <p>
+        Menos procura. Mais compatibilidade.<br>
+        Escolha como deseja participar da VagaNex.
+      </p>
+    </section>
+
+    <section class="opcoes">
+      <article class="cartao">
+        <h2>Sou profissional</h2>
+        <p>
+          Apresente suas experiências, capacidades e evidências.
+          Prepare seu perfil para encontrar oportunidades compatíveis.
+        </p>
+        <a class="botao" href="profissional.html">
+          Área do profissional
+        </a>
+      </article>
+
+      <article class="cartao">
+        <h2>Sou empresa</h2>
+        <p>
+          Estruture suas oportunidades e identifique profissionais
+          com capacidades compatíveis com as necessidades da empresa.
+        </p>
+        <a class="botao" href="empresa.html">
+          Área da empresa
+        </a>
+      </article>
+    </section>
+
+    <div class="aviso">
+      Este é um protótipo demonstrativo. Os botões serão conectados
+      às respectivas áreas conforme os próximos módulos forem criados.
+    </div>
+  </main>
+
+  <footer>
+    VagaNex — Conexões entre empresas, oportunidades e profissionais.
+  </footer>
+</body>
+</html>
