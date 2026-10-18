@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +6,6 @@
   <meta name="theme-color" content="#F4F8F7">
   <meta name="description" content="Área das empresas da plataforma VagaNex.">
   <title>VagaNex | Área da Empresa</title>
-
   <style>
     :root {
       --verde: #0F766E;
@@ -17,163 +15,42 @@
       --cinza: #5B706D;
       --borda: #D8E5E1;
       --branco: #FFFFFF;
+      --erro: #B42318;
     }
-
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-    }
-
-    header {
-      padding: 20px;
-      background: var(--branco);
-      border-bottom: 1px solid var(--borda);
-    }
-
-    .topo {
-      width: min(1050px, 100%);
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .marca {
-      font-size: 25px;
-      font-weight: 800;
-      color: var(--texto);
-      text-decoration: none;
-    }
-
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--fundo); color: var(--texto); }
+    header { padding: 20px; background: var(--branco); border-bottom: 1px solid var(--borda); }
+    .topo { width: min(1050px, 100%); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .marca { font-size: 25px; font-weight: 800; color: var(--texto); text-decoration: none; }
     .marca span { color: var(--verde); }
-
-    .voltar {
-      color: var(--verde);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      width: min(1050px, calc(100% - 32px));
-      margin: 38px auto 60px;
-    }
-
-    .boas-vindas {
-      background: var(--verde);
-      color: white;
-      padding: 30px;
-      border-radius: 20px;
-      margin-bottom: 24px;
-    }
-
-    .boas-vindas h1 {
-      margin-top: 0;
-      font-size: clamp(26px, 4vw, 36px);
-    }
-
-    .boas-vindas p {
-      max-width: 720px;
-      line-height: 1.7;
-    }
-
-    .grade {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .cartao {
-      padding: 25px;
-      background: var(--branco);
-      border: 1px solid var(--borda);
-      border-radius: 18px;
-    }
-
+    .voltar { color: var(--verde); text-decoration: none; font-weight: bold; }
+    main { width: min(1050px, calc(100% - 32px)); margin: 38px auto 60px; }
+    .boas-vindas { background: var(--verde); color: white; padding: 30px; border-radius: 20px; margin-bottom: 24px; }
+    .boas-vindas h1 { margin-top: 0; font-size: clamp(26px, 4vw, 36px); }
+    .boas-vindas p { max-width: 720px; line-height: 1.7; }
+    .grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .cartao { padding: 25px; background: var(--branco); border: 1px solid var(--borda); border-radius: 18px; }
     .cartao h2 { margin-top: 0; }
-
-    .cartao p {
-      color: var(--cinza);
-      line-height: 1.7;
-    }
-
-    label {
-      display: block;
-      margin: 16px 0 7px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--borda);
-      border-radius: 9px;
-      background: white;
-      color: var(--texto);
-      font: inherit;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    button {
-      margin-top: 18px;
-      padding: 13px 18px;
-      border: 0;
-      border-radius: 10px;
-      background: var(--verde);
-      color: white;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
+    .cartao p { color: var(--cinza); line-height: 1.7; }
+    label { display: block; margin: 16px 0 7px; font-size: 14px; font-weight: bold; }
+    input, textarea, select { width: 100%; padding: 12px; border: 1px solid var(--borda); border-radius: 9px; background: white; color: var(--texto); font: inherit; }
+    textarea { min-height: 100px; resize: vertical; }
+    button { margin-top: 18px; padding: 13px 18px; border: 0; border-radius: 10px; background: var(--verde); color: white; font: inherit; font-weight: bold; cursor: pointer; }
     button:hover { opacity: .9; }
-
-    .resultado {
-      display: none;
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 10px;
-      background: var(--verde-claro);
-      line-height: 1.6;
-      overflow-wrap: anywhere;
-    }
-
+    button.secundario { background: var(--verde-claro); color: var(--verde); }
+    button.excluir { margin-top: 8px; background: #FCE8E6; color: var(--erro); padding: 9px 12px; }
+    .acoes { display: flex; flex-wrap: wrap; gap: 10px; }
+    .resultado { display: none; margin-top: 16px; padding: 16px; border-radius: 10px; background: var(--verde-claro); line-height: 1.6; overflow-wrap: anywhere; }
     .resultado h3 { margin-top: 0; }
-
-    .nota {
-      margin-top: 22px;
-      padding: 16px;
-      border-radius: 12px;
-      background: var(--verde-claro);
-      color: var(--cinza);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    footer {
-      padding: 24px;
-      text-align: center;
-      color: var(--cinza);
-      border-top: 1px solid var(--borda);
-    }
-
-    @media (max-width: 700px) {
-      .grade { grid-template-columns: 1fr; }
-      .boas-vindas { padding: 23px; }
-    }
+    .nota { margin-top: 22px; padding: 16px; border-radius: 12px; background: var(--verde-claro); color: var(--cinza); font-size: 14px; line-height: 1.6; }
+    .vaga-salva { margin-top: 14px; padding: 16px; border: 1px solid var(--borda); border-radius: 12px; overflow-wrap: anywhere; }
+    .vaga-salva h3 { margin-top: 0; }
+    .vaga-salva p { margin: 7px 0; }
+    .vazio { color: var(--cinza); }
+    footer { padding: 24px; text-align: center; color: var(--cinza); border-top: 1px solid var(--borda); }
+    @media (max-width: 700px) { .grade { grid-template-columns: 1fr; } .boas-vindas { padding: 23px; } }
   </style>
 </head>
-
 <body>
   <header>
     <div class="topo">
@@ -185,38 +62,28 @@
   <main>
     <section class="boas-vindas">
       <h1>Encontre o profissional de que sua empresa precisa.</h1>
-      <p>
-        Descreva a oportunidade e as capacidades necessárias.
-        A VagaNex busca aproximar as necessidades das empresas
-        das experiências e capacidades dos profissionais.
-      </p>
+      <p>Descreva a oportunidade e as capacidades necessárias. A VagaNex busca aproximar as necessidades das empresas das experiências e capacidades dos profissionais.</p>
     </section>
 
     <section class="grade">
       <article class="cartao">
         <h2>Descrever uma oportunidade</h2>
-        <p>
-          Preencha os dados de demonstração para visualizar
-          como uma oportunidade poderá ser estruturada.
-        </p>
+        <p>Preencha os dados para registrar a oportunidade neste navegador.</p>
+
+        <div id="mensagem" class="resultado" role="status" aria-live="polite"></div>
 
         <form id="formVaga">
-          <label for="empresa">Nome da empresa</label>
-          <input id="empresa" name="empresa"
-                 placeholder="Nome da empresa" required>
+          <label for="empresa">Nome da empresa *</label>
+          <input id="empresa" name="empresa" maxlength="120" placeholder="Nome da empresa" required>
 
-          <label for="cargo">Nome da oportunidade</label>
-          <input id="cargo" name="cargo"
-                 placeholder="Ex.: Operador de Produção" required>
+          <label for="cargo">Nome da oportunidade *</label>
+          <input id="cargo" name="cargo" maxlength="120" placeholder="Ex.: Operador de Produção" required>
 
-          <label for="local">Cidade ou região</label>
-          <input id="local" name="local"
-                 placeholder="Ex.: Marechal Cândido Rondon" required>
+          <label for="local">Cidade ou região *</label>
+          <input id="local" name="local" maxlength="120" placeholder="Ex.: Marechal Cândido Rondon" required>
 
-          <label for="capacidades">Capacidades necessárias</label>
-          <textarea id="capacidades" name="capacidades"
-                    placeholder="Descreva o que a pessoa precisa saber fazer"
-                    required></textarea>
+          <label for="capacidades">Capacidades necessárias *</label>
+          <textarea id="capacidades" name="capacidades" maxlength="3000" placeholder="Descreva o que a pessoa precisa saber fazer" required></textarea>
 
           <label for="modalidade">Modalidade de trabalho</label>
           <select id="modalidade" name="modalidade">
@@ -225,80 +92,151 @@
             <option>Híbrido</option>
           </select>
 
-          <button type="submit">Visualizar oportunidade</button>
+          <div class="acoes">
+            <button type="submit">Salvar oportunidade</button>
+            <button class="secundario" type="reset">Limpar formulário</button>
+          </div>
         </form>
-
-        <div id="resultadoVaga" class="resultado" aria-live="polite"></div>
       </article>
 
       <article class="cartao">
         <h2>Compatibilidade profissional</h2>
-        <p>
-          O objetivo é facilitar a identificação de candidatos
-          cujas capacidades e experiências correspondam à oportunidade.
-        </p>
-
+        <p>O objetivo é facilitar a identificação de candidatos cujas capacidades e experiências correspondam à oportunidade.</p>
         <h3>Como funcionará</h3>
         <p><strong>1.</strong> Estruturar os requisitos da oportunidade.</p>
         <p><strong>2.</strong> Organizar as capacidades dos profissionais.</p>
         <p><strong>3.</strong> Comparar requisitos e evidências disponíveis.</p>
         <p><strong>4.</strong> Apresentar informações para apoiar a decisão da empresa.</p>
-
-        <div class="nota">
-          A VagaNex apoia a análise e a decisão da empresa.
-          A decisão final sobre a contratação permanece com as pessoas responsáveis.
-        </div>
+        <div class="nota">A VagaNex apoia a análise e a decisão da empresa. A decisão final sobre a contratação permanece com as pessoas responsáveis.</div>
       </article>
     </section>
 
+    <section class="cartao" style="margin-top:20px">
+      <h2>Oportunidades salvas neste navegador</h2>
+      <p>Os registros abaixo ficam guardados apenas neste navegador e neste dispositivo.</p>
+      <div id="listaVagas"><p class="vazio">Carregando registros...</p></div>
+    </section>
+
     <div class="nota">
-      <strong>Protótipo demonstrativo:</strong> esta página não publica
-      vagas reais, não envia dados e não pesquisa candidatos.
-      Essas funções serão desenvolvidas posteriormente.
+      <strong>Importante:</strong> esta é uma versão de demonstração. As oportunidades são guardadas localmente neste navegador; não são publicadas na internet, enviadas a um servidor ou mostradas a candidatos. Para isso, será necessário conectar a VagaNex a um banco de dados online.
     </div>
   </main>
 
-  <footer>
-    VagaNex — Menos procura. Mais compatibilidade.
-  </footer>
+  <footer>VagaNex — Menos procura. Mais compatibilidade.</footer>
 
   <script>
-    document.getElementById("formVaga").addEventListener("submit", function(event) {
+    "use strict";
+
+    const CHAVE_VAGANEX = "vaganex_oportunidades_empresa_v1";
+    const formulario = document.getElementById("formVaga");
+    const listaVagas = document.getElementById("listaVagas");
+    const mensagem = document.getElementById("mensagem");
+
+    function mostrarMensagem(texto, erro = false) {
+      mensagem.textContent = texto;
+      mensagem.style.display = "block";
+      mensagem.style.background = erro ? "#FCE8E6" : "var(--verde-claro)";
+      mensagem.style.color = erro ? "var(--erro)" : "var(--verde)";
+    }
+
+    function lerVagas() {
+      try {
+        const conteudo = localStorage.getItem(CHAVE_VAGANEX);
+        const vagas = conteudo ? JSON.parse(conteudo) : [];
+        return Array.isArray(vagas) ? vagas : [];
+      } catch (erro) {
+        mostrarMensagem("Não foi possível ler os registros deste navegador.", true);
+        return [];
+      }
+    }
+
+    function guardarVagas(vagas) {
+      try {
+        localStorage.setItem(CHAVE_VAGANEX, JSON.stringify(vagas));
+        return true;
+      } catch (erro) {
+        mostrarMensagem("Não foi possível guardar os dados. Verifique as configurações do navegador.", true);
+        return false;
+      }
+    }
+
+    function elemento(tag, texto, classe) {
+      const item = document.createElement(tag);
+      if (texto !== undefined) item.textContent = texto;
+      if (classe) item.className = classe;
+      return item;
+    }
+
+    function renderizarVagas() {
+      const vagas = lerVagas();
+      listaVagas.replaceChildren();
+
+      if (vagas.length === 0) {
+        listaVagas.appendChild(elemento("p", "Nenhuma oportunidade salva neste navegador ainda.", "vazio"));
+        return;
+      }
+
+      vagas.forEach(function(vaga) {
+        const cartao = elemento("article", undefined, "vaga-salva");
+        cartao.appendChild(elemento("h3", vaga.cargo));
+        cartao.appendChild(elemento("p", "Empresa: " + vaga.empresa));
+        cartao.appendChild(elemento("p", "Local: " + vaga.local));
+        cartao.appendChild(elemento("p", "Capacidades necessárias: " + vaga.capacidades));
+        cartao.appendChild(elemento("p", "Modalidade: " + vaga.modalidade));
+        cartao.appendChild(elemento("p", "Salva em: " + vaga.dataCadastro));
+
+        const excluir = elemento("button", "Excluir registro", "excluir");
+        excluir.type = "button";
+        excluir.addEventListener("click", function() {
+          if (!window.confirm("Deseja excluir esta oportunidade salva neste navegador?")) return;
+          const atualizadas = lerVagas().filter(function(item) { return item.id !== vaga.id; });
+          if (guardarVagas(atualizadas)) {
+            mostrarMensagem("Oportunidade excluída deste navegador.");
+            renderizarVagas();
+          }
+        });
+
+        cartao.appendChild(excluir);
+        listaVagas.appendChild(cartao);
+      });
+    }
+
+    formulario.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const empresa = document.getElementById("empresa").value.trim();
-      const cargo = document.getElementById("cargo").value.trim();
-      const local = document.getElementById("local").value.trim();
-      const capacidades = document.getElementById("capacidades").value.trim();
-      const modalidade = document.getElementById("modalidade").value;
-      const resultado = document.getElementById("resultadoVaga");
+      if (!formulario.reportValidity()) return;
 
-      resultado.replaceChildren();
+      const vaga = {
+        id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2),
+        empresa: document.getElementById("empresa").value.trim(),
+        cargo: document.getElementById("cargo").value.trim(),
+        local: document.getElementById("local").value.trim(),
+        capacidades: document.getElementById("capacidades").value.trim(),
+        modalidade: document.getElementById("modalidade").value,
+        dataCadastro: new Date().toLocaleString("pt-BR")
+      };
 
-      const titulo = document.createElement("h3");
-      titulo.textContent = "Prévia da oportunidade";
-      resultado.appendChild(titulo);
+      if (!vaga.empresa || !vaga.cargo || !vaga.local || !vaga.capacidades) {
+        mostrarMensagem("Preencha todos os campos obrigatórios marcados com *.", true);
+        return;
+      }
 
-      const dados = [
-        ["Empresa", empresa],
-        ["Oportunidade", cargo],
-        ["Local", local],
-        ["Capacidades necessárias", capacidades],
-        ["Modalidade", modalidade]
-      ];
+      const vagas = lerVagas();
+      vagas.unshift(vaga);
 
-      dados.forEach(function(item) {
-        const linha = document.createElement("p");
-        const rotulo = document.createElement("strong");
-        rotulo.textContent = item[0] + ": ";
-        linha.appendChild(rotulo);
-        linha.appendChild(document.createTextNode(item[1]));
-        resultado.appendChild(linha);
-      });
+      if (!guardarVagas(vagas)) return;
 
-      resultado.style.display = "block";
-      resultado.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      formulario.reset();
+      mostrarMensagem("Oportunidade salva neste navegador com sucesso!");
+      renderizarVagas();
+      listaVagas.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+
+    formulario.addEventListener("reset", function() {
+      // O formulário é limpo; os registros salvos não são apagados.
+    });
+
+    renderizarVagas();
   </script>
 </body>
 </html>
