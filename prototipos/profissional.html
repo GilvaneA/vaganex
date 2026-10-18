@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,157 +15,40 @@
       --cinza: #5B706D;
       --borda: #D8E5E1;
       --branco: #FFFFFF;
+      --erro: #B42318;
     }
-
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-    }
-
-    header {
-      background: var(--branco);
-      border-bottom: 1px solid var(--borda);
-      padding: 20px;
-    }
-
-    .topo {
-      width: min(1050px, 100%);
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .marca {
-      font-size: 25px;
-      font-weight: 800;
-      text-decoration: none;
-      color: var(--texto);
-    }
-
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--fundo); color: var(--texto); }
+    header { background: var(--branco); border-bottom: 1px solid var(--borda); padding: 20px; }
+    .topo { width: min(1050px, 100%); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .marca { font-size: 25px; font-weight: 800; text-decoration: none; color: var(--texto); }
     .marca span { color: var(--verde); }
-
-    .voltar {
-      color: var(--verde);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      width: min(1050px, calc(100% - 32px));
-      margin: 38px auto 60px;
-    }
-
-    .boas-vindas {
-      background: var(--verde);
-      color: white;
-      padding: 30px;
-      border-radius: 20px;
-      margin-bottom: 24px;
-    }
-
-    .boas-vindas h1 {
-      margin-top: 0;
-      font-size: clamp(26px, 4vw, 36px);
-    }
-
-    .boas-vindas p {
-      line-height: 1.7;
-      max-width: 700px;
-    }
-
-    .grade {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .cartao {
-      background: var(--branco);
-      border: 1px solid var(--borda);
-      border-radius: 18px;
-      padding: 25px;
-    }
-
+    .voltar { color: var(--verde); text-decoration: none; font-weight: bold; }
+    main { width: min(1050px, calc(100% - 32px)); margin: 38px auto 60px; }
+    .boas-vindas { background: var(--verde); color: white; padding: 30px; border-radius: 20px; margin-bottom: 24px; }
+    .boas-vindas h1 { margin-top: 0; font-size: clamp(26px, 4vw, 36px); }
+    .boas-vindas p { line-height: 1.7; max-width: 700px; }
+    .grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .cartao { background: var(--branco); border: 1px solid var(--borda); border-radius: 18px; padding: 25px; }
     .cartao h2 { margin-top: 0; }
-
-    .cartao p {
-      color: var(--cinza);
-      line-height: 1.7;
-    }
-
-    label {
-      display: block;
-      font-weight: bold;
-      font-size: 14px;
-      margin: 16px 0 7px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--borda);
-      border-radius: 9px;
-      background: white;
-      color: var(--texto);
-      font: inherit;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    button {
-      margin-top: 18px;
-      padding: 13px 18px;
-      border: 0;
-      border-radius: 10px;
-      background: var(--verde);
-      color: white;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
+    .cartao p { color: var(--cinza); line-height: 1.7; }
+    label { display: block; font-weight: bold; font-size: 14px; margin: 16px 0 7px; }
+    input, textarea, select { width: 100%; padding: 12px; border: 1px solid var(--borda); border-radius: 9px; background: white; color: var(--texto); font: inherit; }
+    textarea { min-height: 100px; resize: vertical; }
+    button { margin-top: 18px; padding: 13px 18px; border: 0; border-radius: 10px; background: var(--verde); color: white; font: inherit; font-weight: bold; cursor: pointer; }
     button:hover { opacity: .9; }
-
-    .resultado {
-      margin-top: 15px;
-      padding: 13px;
-      background: var(--verde-claro);
-      border-radius: 10px;
-      line-height: 1.6;
-      display: none;
-    }
-
-    .nota {
-      margin-top: 22px;
-      padding: 16px;
-      background: var(--verde-claro);
-      color: var(--cinza);
-      border-radius: 12px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    footer {
-      border-top: 1px solid var(--borda);
-      text-align: center;
-      padding: 24px;
-      color: var(--cinza);
-    }
-
-    @media (max-width: 700px) {
-      .grade { grid-template-columns: 1fr; }
-      .boas-vindas { padding: 23px; }
-    }
+    button.secundario { background: var(--verde-claro); color: var(--verde); }
+    button.excluir { margin-top: 8px; background: #FCE8E6; color: var(--erro); padding: 9px 12px; }
+    .acoes { display: flex; flex-wrap: wrap; gap: 10px; }
+    .resultado { margin-top: 15px; padding: 13px; background: var(--verde-claro); border-radius: 10px; line-height: 1.6; display: none; overflow-wrap: anywhere; }
+    .resultado h3 { margin-top: 0; }
+    .nota { margin-top: 22px; padding: 16px; background: var(--verde-claro); color: var(--cinza); border-radius: 12px; font-size: 14px; line-height: 1.6; }
+    .perfil-salvo { margin-top: 14px; padding: 16px; border: 1px solid var(--borda); border-radius: 12px; overflow-wrap: anywhere; }
+    .perfil-salvo h3 { margin-top: 0; }
+    .perfil-salvo p { margin: 7px 0; }
+    .vazio { color: var(--cinza); }
+    footer { border-top: 1px solid var(--borda); text-align: center; padding: 24px; color: var(--cinza); }
+    @media (max-width: 700px) { .grade { grid-template-columns: 1fr; } .boas-vindas { padding: 23px; } }
   </style>
 </head>
 <body>
@@ -180,49 +62,41 @@
   <main>
     <section class="boas-vindas">
       <h1>Seu próximo passo começa aqui.</h1>
-      <p>
-        Organize suas experiências, identifique suas capacidades
-        e prepare seu perfil para encontrar oportunidades compatíveis.
-      </p>
+      <p>Organize suas experiências, identifique suas capacidades e prepare seu perfil para encontrar oportunidades compatíveis.</p>
     </section>
 
     <section class="grade">
       <article class="cartao">
         <h2>Meu perfil profissional</h2>
-        <p>
-          Preencha os dados de demonstração para visualizar
-          como seu perfil poderá ser organizado.
-        </p>
+        <p>Preencha os dados para construir e guardar seu perfil profissional neste navegador.</p>
+
+        <div id="mensagemPerfil" class="resultado" role="status" aria-live="polite"></div>
 
         <form id="formPerfil">
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" autocomplete="name"
-                 placeholder="Seu nome" required>
+          <label for="nome">Nome *</label>
+          <input id="nome" name="nome" autocomplete="name" maxlength="120" placeholder="Seu nome" required>
 
-          <label for="area">Área de interesse</label>
-          <input id="area" name="area"
-                 placeholder="Ex.: produção, vendas, logística" required>
+          <label for="area">Área de interesse *</label>
+          <input id="area" name="area" maxlength="160" placeholder="Ex.: produção, vendas, logística" required>
 
-          <label for="experiencias">Experiências e capacidades</label>
-          <textarea id="experiencias" name="experiencias"
-                    placeholder="Conte um pouco sobre o que sabe fazer"
-                    required></textarea>
+          <label for="experiencias">Experiências e capacidades *</label>
+          <textarea id="experiencias" name="experiencias" maxlength="4000" placeholder="Conte o que sabe fazer, experiências de trabalho, atividades autônomas ou vivências práticas." required></textarea>
 
-          <button type="submit">Visualizar meu perfil</button>
+          <div class="acoes">
+            <button type="submit">Salvar perfil</button>
+            <button class="secundario" type="reset">Limpar formulário</button>
+          </div>
         </form>
 
         <div id="resultadoPerfil" class="resultado" aria-live="polite"></div>
       </article>
 
       <article class="cartao">
-        <h2>Oportunidades compatíveis</h2>
-        <p>
-          Esta área será usada para apresentar oportunidades
-          conforme as capacidades e preferências do profissional.
-        </p>
+        <h2>Preferências de oportunidades</h2>
+        <p>Defina suas preferências para futuras consultas de oportunidades compatíveis.</p>
 
         <label for="distancia">Tempo de deslocamento desejado</label>
-        <select id="distancia">
+        <select id="distancia" name="distancia">
           <option value="30">Até 30 minutos</option>
           <option value="45">Até 45 minutos</option>
           <option value="60">Até 60 minutos</option>
@@ -230,71 +104,198 @@
         </select>
 
         <label for="modalidade">Tipo de oportunidade</label>
-        <select id="modalidade">
+        <select id="modalidade" name="modalidade">
           <option>Presencial</option>
           <option>Remota</option>
           <option>Híbrida</option>
           <option>Todas</option>
         </select>
 
-        <button type="button" id="consultar">
-          Consultar preferências
-        </button>
-
-        <div id="resultadoPreferencias" class="resultado"
-             aria-live="polite"></div>
+        <div class="acoes">
+          <button type="button" id="salvarPreferencias">Salvar preferências</button>
+          <button type="button" class="secundario" id="consultar">Consultar preferências</button>
+        </div>
+        <div id="resultadoPreferencias" class="resultado" aria-live="polite"></div>
       </article>
     </section>
 
+    <section class="cartao" style="margin-top:20px">
+      <h2>Perfis salvos neste navegador</h2>
+      <p>Os registros abaixo ficam guardados somente neste navegador e dispositivo.</p>
+      <div id="listaPerfis"><p class="vazio">Carregando perfis...</p></div>
+    </section>
+
     <div class="nota">
-      <strong>Protótipo demonstrativo:</strong> os dados preenchidos
-      não são enviados a uma empresa nem salvos em um banco de dados.
-      A busca real de vagas e a análise de compatibilidade serão
-      desenvolvidas nas próximas etapas.
+      <strong>Importante:</strong> esta é uma versão de demonstração. Os perfis e as preferências ficam guardados localmente neste navegador. Não são enviados a empresas nem compartilhados com outros dispositivos. Para isso, será necessário conectar a VagaNex a um banco de dados online.
     </div>
   </main>
 
-  <footer>
-    VagaNex — Menos procura. Mais compatibilidade.
-  </footer>
+  <footer>VagaNex — Menos procura. Mais compatibilidade.</footer>
 
   <script>
-    document.getElementById("formPerfil").addEventListener("submit", function(event) {
-      event.preventDefault();
+    "use strict";
 
-      const nome = document.getElementById("nome").value.trim();
-      const area = document.getElementById("area").value.trim();
-      const experiencias = document.getElementById("experiencias").value.trim();
-      const resultado = document.getElementById("resultadoPerfil");
+    const CHAVE_PERFIS = "vaganex_perfis_profissionais_v1";
+    const CHAVE_PREFERENCIAS = "vaganex_preferencias_profissionais_v1";
+    const formPerfil = document.getElementById("formPerfil");
+    const mensagemPerfil = document.getElementById("mensagemPerfil");
+    const resultadoPerfil = document.getElementById("resultadoPerfil");
+    const resultadoPreferencias = document.getElementById("resultadoPreferencias");
+    const listaPerfis = document.getElementById("listaPerfis");
 
-      resultado.replaceChildren();
+    function mostrarMensagem(elemento, texto, erro = false) {
+      elemento.textContent = texto;
+      elemento.style.display = "block";
+      elemento.style.background = erro ? "#FCE8E6" : "var(--verde-claro)";
+      elemento.style.color = erro ? "var(--erro)" : "var(--verde)";
+    }
 
-      const titulo = document.createElement("strong");
-      titulo.textContent = "Prévia do perfil";
-      resultado.appendChild(titulo);
+    function lerLista(chave) {
+      try {
+        const conteudo = localStorage.getItem(chave);
+        const dados = conteudo ? JSON.parse(conteudo) : [];
+        return Array.isArray(dados) ? dados : [];
+      } catch (erro) {
+        return [];
+      }
+    }
 
-      [nome, area, experiencias].forEach(function(texto) {
-        const linha = document.createElement("p");
-        linha.textContent = texto;
-        resultado.appendChild(linha);
+    function guardar(chave, dados) {
+      try {
+        localStorage.setItem(chave, JSON.stringify(dados));
+        return true;
+      } catch (erro) {
+        mostrarMensagem(mensagemPerfil, "Não foi possível guardar os dados. Verifique as configurações do navegador.", true);
+        return false;
+      }
+    }
+
+    function criarElemento(tag, texto, classe) {
+      const item = document.createElement(tag);
+      if (texto !== undefined) item.textContent = texto;
+      if (classe) item.className = classe;
+      return item;
+    }
+
+    function renderizarPerfis() {
+      const perfis = lerLista(CHAVE_PERFIS);
+      listaPerfis.replaceChildren();
+
+      if (perfis.length === 0) {
+        listaPerfis.appendChild(criarElemento("p", "Nenhum perfil salvo neste navegador ainda.", "vazio"));
+        return;
+      }
+
+      perfis.forEach(function(perfil) {
+        const cartao = criarElemento("article", undefined, "perfil-salvo");
+        cartao.appendChild(criarElemento("h3", perfil.nome));
+        cartao.appendChild(criarElemento("p", "Área de interesse: " + perfil.area));
+        cartao.appendChild(criarElemento("p", "Experiências e capacidades: " + perfil.experiencias));
+        cartao.appendChild(criarElemento("p", "Deslocamento: " + perfil.distanciaTexto));
+        cartao.appendChild(criarElemento("p", "Modalidade: " + perfil.modalidade));
+        cartao.appendChild(criarElemento("p", "Salvo em: " + perfil.dataCadastro));
+
+        const excluir = criarElemento("button", "Excluir perfil", "excluir");
+        excluir.type = "button";
+        excluir.addEventListener("click", function() {
+          if (!window.confirm("Deseja excluir este perfil salvo neste navegador?")) return;
+          const atualizados = lerLista(CHAVE_PERFIS).filter(function(item) { return item.id !== perfil.id; });
+          if (guardar(CHAVE_PERFIS, atualizados)) {
+            mostrarMensagem(mensagemPerfil, "Perfil excluído deste navegador.");
+            renderizarPerfis();
+          }
+        });
+
+        cartao.appendChild(excluir);
+        listaPerfis.appendChild(cartao);
       });
+    }
 
-      resultado.style.display = "block";
+    function textoDistancia() {
+      const select = document.getElementById("distancia");
+      return select.options[select.selectedIndex].text;
+    }
+
+    formPerfil.addEventListener("submit", function(event) {
+      event.preventDefault();
+      if (!formPerfil.reportValidity()) return;
+
+      const perfil = {
+        id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2),
+        nome: document.getElementById("nome").value.trim(),
+        area: document.getElementById("area").value.trim(),
+        experiencias: document.getElementById("experiencias").value.trim(),
+        distancia: document.getElementById("distancia").value,
+        distanciaTexto: textoDistancia(),
+        modalidade: document.getElementById("modalidade").value,
+        dataCadastro: new Date().toLocaleString("pt-BR")
+      };
+
+      if (!perfil.nome || !perfil.area || !perfil.experiencias) {
+        mostrarMensagem(mensagemPerfil, "Preencha todos os campos obrigatórios marcados com *.", true);
+        return;
+      }
+
+      const perfis = lerLista(CHAVE_PERFIS);
+      perfis.unshift(perfil);
+      if (!guardar(CHAVE_PERFIS, perfis)) return;
+
+      mostrarMensagem(mensagemPerfil, "Perfil salvo neste navegador com sucesso!");
+      resultadoPerfil.replaceChildren();
+      resultadoPerfil.appendChild(criarElemento("h3", "Prévia do perfil"));
+      resultadoPerfil.appendChild(criarElemento("p", "Nome: " + perfil.nome));
+      resultadoPerfil.appendChild(criarElemento("p", "Área de interesse: " + perfil.area));
+      resultadoPerfil.appendChild(criarElemento("p", "Experiências e capacidades: " + perfil.experiencias));
+      resultadoPerfil.appendChild(criarElemento("p", "Preferência de deslocamento: " + perfil.distanciaTexto));
+      resultadoPerfil.appendChild(criarElemento("p", "Modalidade: " + perfil.modalidade));
+      resultadoPerfil.style.display = "block";
+
+      formPerfil.reset();
+      renderizarPerfis();
+      listaPerfis.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    document.getElementById("salvarPreferencias").addEventListener("click", function() {
+      const preferencias = {
+        distancia: document.getElementById("distancia").value,
+        distanciaTexto: textoDistancia(),
+        modalidade: document.getElementById("modalidade").value,
+        dataAtualizacao: new Date().toLocaleString("pt-BR")
+      };
+
+      try {
+        localStorage.setItem(CHAVE_PREFERENCIAS, JSON.stringify(preferencias));
+        mostrarMensagem(resultadoPreferencias, "Preferências salvas neste navegador: deslocamento " + preferencias.distanciaTexto + "; modalidade " + preferencias.modalidade + ".");
+      } catch (erro) {
+        mostrarMensagem(resultadoPreferencias, "Não foi possível salvar as preferências neste navegador.", true);
+      }
     });
 
     document.getElementById("consultar").addEventListener("click", function() {
-      const distancia = document.getElementById("distancia");
-      const modalidade = document.getElementById("modalidade");
-      const resultado = document.getElementById("resultadoPreferencias");
-
-      resultado.textContent =
-        "Preferências selecionadas: deslocamento " +
-        distancia.options[distancia.selectedIndex].text +
-        "; modalidade " + modalidade.value +
-        ". A busca real de oportunidades será conectada futuramente.";
-
-      resultado.style.display = "block";
+      const preferencias = {
+        distanciaTexto: textoDistancia(),
+        modalidade: document.getElementById("modalidade").value
+      };
+      mostrarMensagem(resultadoPreferencias, "Preferências selecionadas: deslocamento " + preferencias.distanciaTexto + "; modalidade " + preferencias.modalidade + ". A busca real de oportunidades será conectada futuramente.");
     });
+
+    function carregarPreferencias() {
+      try {
+        const dados = JSON.parse(localStorage.getItem(CHAVE_PREFERENCIAS) || "null");
+        if (!dados) return;
+        document.getElementById("distancia").value = dados.distancia || "30";
+        document.getElementById("modalidade").value = dados.modalidade || "Presencial";
+      } catch (erro) {
+        // Mantém as opções padrão se não houver preferências válidas.
+      }
+    }
+
+    formPerfil.addEventListener("reset", function() {
+      // Limpar o formulário não apaga perfis já guardados.
+    });
+
+    carregarPreferencias();
+    renderizarPerfis();
   </script>
 </body>
 </html>
